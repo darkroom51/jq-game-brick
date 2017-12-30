@@ -13,7 +13,12 @@ function Brick(positionX, positionY, type, isGood) {
         if (this.x >= env.maxPosX - this.width) {this.x = env.maxPosX - this.width}
         this.brickHandler = $('<div class="brick brick-type-'+this.type+'" style="left: ' + this.x + '%;"></div>');
         $('.game-board').append(this.brickHandler);
-        $(this.brickHandler).html(this.score); //-----------wld_test
+        if (this.type<=5) {
+            $(this.brickHandler).html('<div class="brick-health-good"> +'+ this.health +'</div>'); //-----------wld_test
+        } 
+        else{
+            $(this.brickHandler).html('<div class="brick-health-bad"> -'+ this.health +'</div>'); //-----------wld_test
+        }
     }
     this.moveDown = function () {
         if ((this.y + this.step) <= env.maxPosY) {

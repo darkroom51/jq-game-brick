@@ -48,6 +48,7 @@ body {
     background: silver;
     height: 100%;
     margin-left: -1px;
+    display: none;
 }
 
 .axis-x {
@@ -94,7 +95,7 @@ body {
 }
 
 
-.brick.brick-type-1{
+/* .brick.brick-type-1{
     background:#007F05;
 }
 .brick.brick-type-2{
@@ -107,7 +108,7 @@ body {
     background:#267F2A;
 }
 .brick.brick-type-5{
-    background:#0184bb; /* pizza */
+    background:#0184bb;
 }
 .brick.brick-type-6{
     background:#FF4C87;
@@ -120,9 +121,54 @@ body {
 }
 .brick.brick-type-9{
     background:#7F002A;
+} */
+
+.brick.brick-type-1{
+    background: url('../img/h1.svg') top left no-repeat;
+}
+.brick.brick-type-2{
+    background:url('../img/h2.svg') top left no-repeat;
+}
+.brick.brick-type-3{
+    background:url('../img/h3.svg') top left no-repeat;
+}
+.brick.brick-type-4{
+    background:url('../img/h4.svg') top left no-repeat;
+}
+.brick.brick-type-5{
+    background:url('../img/h5.svg') top left no-repeat;
+}
+.brick.brick-type-6{
+    background:url('../img/h6.svg') top left no-repeat;
+}
+.brick.brick-type-7{
+    background:url('../img/h7.svg') top left no-repeat;
+}
+.brick.brick-type-8{
+    background:url('../img/h8.svg') top left no-repeat;
+}
+.brick.brick-type-9{
+    background:url('../img/h9.svg') top left no-repeat;
 }
 
-#scorebar{
+.brick .brick-health-good{ 
+    background: green;
+    color:#fff;
+    font-size:0.8em;
+    display: inline-block;
+    padding: 1px;
+    border-radius: 2px;
+}
+.brick .brick-health-bad{ 
+    background: red;
+    color:#fff;
+    font-size:0.8em;
+    display: inline-block;
+    padding: 2px;
+    border-radius: 2px;
+}
+
+#score_bar{
     position:fixed;
     top:0;
     left:0;
@@ -142,7 +188,7 @@ body {
     font-size: 10em;
     text-align: center;
     z-index: 100;
-    opacity: 0.6;
+    opacity: 0.8;
 }
 .page-level-ok span{
     display: inline-block;
@@ -202,47 +248,31 @@ a#bg_sound_mute.bg-sound-off {
     background: url('../img/bg-sound-off.svg') center center no-repeat;
 }
 
+.game-instruction{
+    display: inline-block;
+    position: absolute;
+    z-index: 101;
+    width:55%;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    text-align: left;
+}
+.game-instruction p{
+    font-size:2rem;
+    padding:0 0 30px 0;
+}
+.game-instruction img{
+    max-width: 30px;
+    height: auto;
+    display: inline-block;
+    margin-left:10px;
+}
 
 
-/* =================================TEMP============================================ */
 
 
-.brick.brick-type-1{
-    background: url('../img/h1.svg') top left no-repeat;
-    color:green;
-}
-.brick.brick-type-2{
-    background:url('../img/h2.svg') top left no-repeat;
-    color:green;
-}
-.brick.brick-type-3{
-    background:url('../img/h3.svg') top left no-repeat;
-    color:green;
-}
-.brick.brick-type-4{
-    background:url('../img/h4.svg') top left no-repeat;
-    color:green;
-}
-.brick.brick-type-5{
-    background:url('../img/h5.svg') top left no-repeat;
-    color:green;
-}
-.brick.brick-type-6{
-    background:url('../img/h6.svg') top left no-repeat;
-    color:red;
-}
-.brick.brick-type-7{
-    background:url('../img/h7.svg') top left no-repeat;
-    color:red;
-}
-.brick.brick-type-8{
-    background:url('../img/h8.svg') top left no-repeat;
-    color:red;
-}
-.brick.brick-type-9{
-    background:url('../img/h9.svg') top left no-repeat;
-    color:red;
-}
+
 
 
 
