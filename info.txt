@@ -1,0 +1,33 @@
+/*
+Moja wizja gry
+---------------
+
+Gra polega na lapaniu spadajacych itemow (klasa Brick) do koszyka (klasa Basket) poruszanego myszka.
+Jest ona podzielona na 3 levele o wzrastajacym stopniu trudnosci (na kazdym kolejnym levelu wzrasta ilosc i predkosc spadania itemow). Celem gry jest ukonczenie 3 levelow, a kazdy level-up wymaga zdobycia okreslonej liczby punktow na danym levelu (o tym pozniej).
+
+Koszyk:
+Poruszany myszka element <div> o stalej, okreslonej szerokosci i wysokosci.
+
+Itemy:
+Generowane randomowo elementy <div> o stalej szerokosci i wysokosci.
+Istnieje 9 rodziajow itemow, 4 dobre, 4 zle i pizza :). Kazdy z nich ma swoja "wage" 1-9.
+1,2,3,4 - itemy dobre
+5 - pizza
+6,7,8,9 - itemy zle
+Kazda z powyzszych "wag" oznacza predkosc spadania, a takze liczbe punktow jaka uzyskamy za jego zlapanie. Itemy dobre maja punkty dodatnie, itemy zle punkty ujemne. Itemy dobre spadaja wolniej (i maja mniej +punktow), itemy zle szybciej (i maja wiecej -punktow), czyli analogicznie jak powyzej, za zlapanie itema uzyskujemy:
++10,+20,+30,+40 - itemy dobre
++50 - pizza
+-60,-70,-80,-90 - itemy zle
+
+Gra:
+Celem gracza jest lapanie itemow dobrych i omijanie itemow zlych, tak aby:
+1. w levelu 1 uzyskac 1000 punktow, co pozwoli na przejscie do levelu 2
+2. w levelu 2 uzyskac 2000 punktow, co pozwoli na przejscie do levelu 3
+3. w levelu 3 uzyskac 3000 punktow, co pozwoli na ukoncenie gry!
+Kolizje sprawdzamy tylko dla obiektu Basket, czyli tylko po zetknieciu itema z koszykiem. Jesli zlapiemy item dobry, punkty w gore. Jesli zlapiemy item zly, punkty w dol.
+Nie sprawdzamy kolizji itemow z "ziemia", wiec upadek itema (czy to dobrego, czy zlego) na "ziemie" nie ma dla nas znaczenia.
+Nie mamy tez okreslonej ilosci zyc, bo nie jest ona potrzebna w takim scenariuszu.
+
+Proste, przyjemne, therefore wykonalne ;)
+
+*/
