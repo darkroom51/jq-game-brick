@@ -180,6 +180,29 @@ button:hover{
     box-shadow: 4px 4px 10px 0 rgba(0,0,0,.36);
 }
 
+.sounds{
+    position: absolute;
+    top:0;
+    left:0;
+    z-index: 200;
+}
+
+a#bg_sound_mute{
+    position: absolute;
+    top:3px;
+    left:4px;
+    z-index: 201;
+    width:16px;
+    height:16px;
+}
+a#bg_sound_mute.bg-sound-on {
+    background: url('../img/bg-sound-on.svg') center center no-repeat;
+}
+a#bg_sound_mute.bg-sound-off {
+    background: url('../img/bg-sound-off.svg') center center no-repeat;
+}
+
+
 
 /* =================================TEMP============================================ */
 

@@ -120,6 +120,7 @@ var env = {
 env.setPageStartGame();
 
 $('.game-board').append('<div id="scorebar"></div>'); //-----wld_TEMP
+$('.game-board').append('<div class="sounds"><audio id="bg_sound" autoplay="autoplay" loop="loop"><source src="audio/8-bit-Arcade4.mp3" /></audio><a href="#noscroll" id="bg_sound_mute" class="bg-sound-on"></a></div>'); //-----wld_TEMP
 
 /*-----------------------------Inicjujemy Basket--------------------------------*/
 //tworzymy i inicjujemy koszyk
