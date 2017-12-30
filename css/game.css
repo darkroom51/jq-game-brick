@@ -26,6 +26,7 @@ body {
     height: 95%;
     width: 95vh;
     transform: translate(-50%, -50%);
+    /*box-shadow: 0px 0px 15px 0px rgba(0,0,0,.6);*/
 }
 
 
@@ -84,8 +85,8 @@ body {
     position: absolute;
     top: 0%;
     left: 0%;
-    height: 5%;
-    width: 5%;
+    height: 7%;
+    width: 7%;
     z-index: 35;
     background: silver;
     color: #fff;
@@ -131,7 +132,6 @@ body {
     color:#fff;
     text-align:right;
     padding: 4px 4px 0 0;
-    /*box-shadow: 0 0px 10px 0px rgba(0,0,0,.3);*/
 }
 
 .page-level-ok{
@@ -181,6 +181,45 @@ button:hover{
 }
 
 
+/* =================================TEMP============================================ */
+
+
+.brick.brick-type-1{
+    background: url('../img/h1.svg') top left no-repeat;
+    color:green;
+}
+.brick.brick-type-2{
+    background:url('../img/h2.svg') top left no-repeat;
+    color:green;
+}
+.brick.brick-type-3{
+    background:url('../img/h3.svg') top left no-repeat;
+    color:green;
+}
+.brick.brick-type-4{
+    background:url('../img/h4.svg') top left no-repeat;
+    color:green;
+}
+.brick.brick-type-5{
+    background:url('../img/h5.svg') top left no-repeat;
+    color:green;
+}
+.brick.brick-type-6{
+    background:url('../img/h6.svg') top left no-repeat;
+    color:red;
+}
+.brick.brick-type-7{
+    background:url('../img/h7.svg') top left no-repeat;
+    color:red;
+}
+.brick.brick-type-8{
+    background:url('../img/h8.svg') top left no-repeat;
+    color:red;
+}
+.brick.brick-type-9{
+    background:url('../img/h9.svg') top left no-repeat;
+    color:red;
+}
 
 
 

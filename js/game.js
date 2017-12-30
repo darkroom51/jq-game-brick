@@ -56,8 +56,8 @@ var env = {
             env.level = env.level + 1;
         }
         if (level === 2) {
-            env.speed = 0.4;
-            env.creationDelay = 500;
+            env.speed = 0.5;
+            env.creationDelay = 400;
             env.levelEndScore = 300;
             env.levelDeadScore = -100;
             env.level = env.level + 1;

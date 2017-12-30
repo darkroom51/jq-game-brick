@@ -2,8 +2,8 @@ function Brick(positionX, positionY, type, isGood) {
     this.brickHandler = '';
     this.x = positionX;
     this.y = positionY;
-    this.width = 5;
-    this.height = 5;
+    this.width = 7;
+    this.height = 7;
     this.type = type; //dodawanie klasy, zeby okreslic typ
     this.isGood = isGood;
     this.score = this.type * 10;
