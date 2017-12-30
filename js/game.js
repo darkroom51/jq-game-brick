@@ -9,8 +9,9 @@ var env = {
     score: 0,
     speed: 0,
     creationDelay: 0,
-    levelEndScore: 0,
-    levelDeadScore: 0,
+    levelEndHealth: 0,
+    levelDeadHealth: 0,
+    health: 0,
     calcProc: function (x) {
         return Math.floor(x * 100 / env.viewPortWpx)
     },
@@ -44,26 +45,29 @@ var env = {
         if (level === 0) {
             env.speed = 0.2;
             env.creationDelay = 2000;
-            env.levelEndScore = 100;
-            env.levelDeadScore = -100;
+            env.levelEndHealth = 100;
+            env.health = 0;
+            env.levelDeadHealth = -100;
             env.level = env.level + 1;
         }
         if (level === 1) {
             env.speed = 0.3;
             env.creationDelay = 1000;
-            env.levelEndScore = 200;
-            env.levelDeadScore = -100;
+            env.levelEndHealth = 200;
+            env.health = 0;
+            env.levelDeadHealth = -50;
             env.level = env.level + 1;
         }
         if (level === 2) {
             env.speed = 0.5;
             env.creationDelay = 400;
-            env.levelEndScore = 300;
-            env.levelDeadScore = -100;
+            env.levelEndHealth = 300;
+            env.health = 0;
+            env.levelDeadHealth = -50;
             env.level = env.level + 1;
         }
 
-        $('#scorebar').text('level: '+ env.level +' | score: '+ env.score);
+        $('#scorebar').text('level: '+ env.level +' | health: '+ env.health +' | score: '+ env.score);
 
         /*-----------------------------Inicjujemy Bricks--------------------------------*/
         var bricks = [];
@@ -80,8 +84,8 @@ var env = {
             bricks.forEach(function (element) {
                 element.moveDown();
                 if (element.checkCollision(basket)) {
-                    if (element.type <= 5) { env.score += element.score } else { env.score -= element.score }
-                    $('#scorebar').text('level: '+ env.level +' | score: '+ env.score);
+                    if (element.type <= 5) { env.score += element.score; env.health += element.health; } else { env.score -= element.type; env.health -= element.health; }
+                    $('#scorebar').text('level: '+ env.level +' | health: '+ env.health +' | score: '+ env.score);
                     element.removeBrick();
                     //delete element;
                 } else {
@@ -89,7 +93,7 @@ var env = {
                 }
             });
             //Jesli osiagnelismy wymagana liczbe punktow Gra zatrzymuje intervals i LEVEL UP!
-            if (env.score >= env.levelEndScore) {
+            if (env.health >= env.levelEndHealth) {
                 clearInterval(intervalCheck);
                 clearInterval(intervalBrick);
                 env.clearBricks(bricks);
@@ -97,15 +101,16 @@ var env = {
                 env.setPageLevelEnd();
             }
             //Jesli zeszlismy ponizej zalozonej liczby punktow to Game Over
-            if (env.score < env.levelDeadScore) {
+            if (env.health < env.levelDeadHealth) {
                 clearInterval(intervalCheck);
                 clearInterval(intervalBrick);
-                $('#scorebar').text('level: '+ env.level +' | score: '+ env.score);
+                $('#scorebar').text('level: '+ env.level +' | health: '+ env.health +' | score: '+ env.score);
                 env.setPageGameOver();
                 env.clearBricks(bricks);
                 bricks = [];
                 env.score = 0;
                 env.level = 0;
+                env.health = 0;
             }
         }, 50);
     } //end initLevel

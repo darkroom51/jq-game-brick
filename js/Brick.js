@@ -8,6 +8,7 @@ function Brick(positionX, positionY, type, isGood) {
     this.isGood = isGood;
     this.score = this.type * 10;
     this.step = env.speed * this.type;
+    this.health = this.type * 5;
     this.init = function () {
         if (this.x >= env.maxPosX - this.width) {this.x = env.maxPosX - this.width}
         this.brickHandler = $('<div class="brick brick-type-'+this.type+'" style="left: ' + this.x + '%;"></div>');
