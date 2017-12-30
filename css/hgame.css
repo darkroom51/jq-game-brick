@@ -108,34 +108,6 @@ body {
 }
 
 
-/* .brick.brick-type-1{
-    background: url('../img/1.svg') top left no-repeat;
-}
-.brick.brick-type-2{
-    background:url('../img/2.svg') top left no-repeat;
-}
-.brick.brick-type-3{
-    background:url('../img/3.svg') top left no-repeat;
-}
-.brick.brick-type-4{
-    background:url('../img/4.svg') top left no-repeat;
-}
-.brick.brick-type-5{
-    background:url('../img/5.svg') top left no-repeat; 
-}
-.brick.brick-type-6{
-    background:url('../img/6.svg') top left no-repeat;
-}
-.brick.brick-type-7{
-    background:url('../img/7.svg') top left no-repeat;
-}
-.brick.brick-type-8{
-    background:url('../img/8.svg') top left no-repeat;
-}
-.brick.brick-type-9{
-    background:url('../img/9.svg') top left no-repeat;
-} */
-
 .brick.brick-type-1{
     background: url('../img/h1.svg') top left no-repeat;
     color:green;
@@ -153,7 +125,7 @@ body {
     color:green;
 }
 .brick.brick-type-5{
-    background:url('../img/5.svg') top left no-repeat;
+    background:url('../img/h5.svg') top left no-repeat;
     color:green;
 }
 .brick.brick-type-6{
