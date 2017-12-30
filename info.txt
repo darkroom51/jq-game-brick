@@ -2,6 +2,12 @@
 Moja wizja gry
 ---------------
 
+UWAGA!!!
+Sporo zmian jesli chodzi o score i health. To co ponizej, nie do konca aktualne.
+Zapytaj o szczegoly, bo mi sie nie chce pisac.
+
+-----
+
 Gra polega na lapaniu spadajacych itemow (klasa Brick) do koszyka (klasa Basket) poruszanego myszka.
 Jest ona podzielona na 3 levele o wzrastajacym stopniu trudnosci (na kazdym kolejnym levelu wzrasta ilosc i predkosc spadania itemow). Celem gry jest ukonczenie 3 levelow, a kazdy level-up wymaga zdobycia okreslonej liczby punktow na danym levelu (o tym pozniej).
 
@@ -29,5 +35,6 @@ Nie sprawdzamy kolizji itemow z "ziemia", wiec upadek itema (czy to dobrego, czy
 Nie mamy tez okreslonej ilosci zyc, bo nie jest ona potrzebna w takim scenariuszu.
 
 Proste, przyjemne, therefore wykonalne ;)
+
 
 */
