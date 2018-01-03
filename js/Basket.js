@@ -10,7 +10,5 @@ function Basket() {
     this.moveBasket = function (positionMX) {
         this.positionX = positionMX;
         $('.basket').css('left', (this.positionX) + '%');
-        //$('.basket').html('this.x: ' + this.positionX); //----wld_test
-        //console.log(this.x); //--------------------wld_CL
     }
 }
