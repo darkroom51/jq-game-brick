@@ -52,54 +52,52 @@ var env = {
         $('.game-board').append(pageGameOver);
     },
     initLevel: function (level) {
-        /*-----------------------------Ustawiamy wartosci poczatkowe kazdego levelu--------------------------------*/
+        /*-- Set Starting values for each level --*/
         if (level === 0) {
-            env.speed = 0.2;
-            env.creationDelay = 2000;
-            env.levelEndHealth = 200;
-            env.health = 0;
-            env.levelDeadHealth = -100;
             env.level = 1;
+            env.speed = 0.3;
+            env.creationDelay = 1500;
+            env.levelEndHealth = 200;
+            env.levelDeadHealth = -100;
+            env.health = 0;
         }
         if (level === 1) {
+            env.level = 2;
             env.speed = 0.4;
             env.creationDelay = 1000;
             env.levelEndHealth = 400;
-            env.health = 0;
             env.levelDeadHealth = -100;
-            env.level = 2;
+            env.health = 0;
         }
         if (level === 2) {
+            env.level = 3;
             env.speed = 0.5;
             env.creationDelay = 400;
             env.levelEndHealth = 600;
-            env.health = 0;
             env.levelDeadHealth = -100;
-            env.level = 3;
+            env.health = 0;
         }
         if (level === 3) { //bonus round, no chance to survive
+            env.level = 10;
             env.speed = 0.6;
             env.creationDelay = 100;
             env.levelEndHealth = 10000;
-            env.health = 0;
             env.levelDeadHealth = -100;
-            env.level = 10;
+            env.health = 0;
         }
 
         $('#score_bar').text('level: '+ env.level +' | health: '+ env.health +' | score: '+ env.score); //-----wld_TEMP
 
-        /*-----------------------------Inicjujemy Bricks--------------------------------*/
+        /*-- Bricks Interval --*/
         var bricks = [];
-        //Interval tworzacy Bricks
         var intervalBrick = setInterval(function () {
             var brick = new Brick(env.getRandom(0, 100), 0, env.getRandom(1, 10), env.getRandom(1, 2));
             brick.init();
             bricks.push(brick);
         }, env.creationDelay);
 
-        /*-----------------------------Interval Gry--------------------------------*/
+        /*-- Game Interval --*/
         var intervalCheck = setInterval(function () {
-            //poruszanie brick w dol i sprawdzanie czy Brick zostal zlapany w Basket
             bricks.forEach(function (element) {
                 element.moveDown();
                 if (element.checkCollision(basket)) {
@@ -108,45 +106,43 @@ var env = {
                     element.removeBrick();
                     //delete element;
                 } else {
-                    //nothing
+                    //do nothing
                 }
             });
-            //Jesli osiagnelismy wymagana liczbe health punktow Gra zatrzymuje intervals i LEVEL UP!
+            //if levelEndHealth reached, stop intervals and LEVEL UP!
             if (env.health >= env.levelEndHealth) {
                 clearInterval(intervalCheck);
                 clearInterval(intervalBrick);
                 env.clearBricks(bricks);
                 bricks = [];
-                if (env.level<3) {env.setPageLevelEnd();}
-                if (env.level===3) {env.setPageGameEnd();}
+                if (env.level < 3) {env.setPageLevelEnd();}
+                if (env.level === 3) {env.setPageGameEnd();}
             }
-            //Jesli zeszlismy ponizej zalozonej liczby health punktow Gra zatrzymuje intervals i Game Over!
+            //if levelDeathHealth reached, stop intervals and GAME OVER!
             if (env.health < env.levelDeadHealth) {
                 clearInterval(intervalCheck);
                 clearInterval(intervalBrick);
-                env.setPageGameOver();
                 env.clearBricks(bricks);
                 bricks = [];
+                env.setPageGameOver();
             }
-        }, 50); //end intervalu gry
+        }, 50); //end Game Interval
     } //end initLevel
-} //end env
+} //end env{}
 
 
 //incjujemy strone startowa, umieszczamy w html score_bar i bg_sound
 env.setPageStartGame();
 $('.game-board').append('<div id="score_bar"></div>'); //-----wld_TEMP
-$('.game-board').append('<div class="sounds"><audio id="bg_sound" autoplay="autoplay" loop="loop"><source src="audio/8-bit-Arcade4.mp3" /></audio><a href="#noscroll" id="bg_sound_mute" class="bg-sound-on"></a></div>'); //-----wld_TEMP
+$('.game-board').append('<div class="sounds"><audio id="bg_sound" autoplay="autoplay" loop="loop"><source src="audio/8-bit-bg-sound.mp3" /></audio><a href="#noscroll" id="bg_sound_mute" class="bg-sound-on"></a></div>'); //-----wld_TEMP
 
-/*-----------------------------Inicjujemy Basket--------------------------------*/
-//tworzymy i inicjujemy koszyk
+
+/*-- Init basket --*/
 var basket = new Basket();
 basket.init();
-//poruszamy koszykiem
+//Set .mousemove() listener for basket
 $('.game-board').mousemove(function (e) {
-    //console.log('page: ', e.pageX); //--------------------wld_CL
     var newX = Math.floor(env.calcProc(e.pageX) - basket.width / 2 - env.calcProc($('.game-board').offset().left));
-    //console.log(newX); //--------------------wld_CL
     if ((newX + basket.width < env.maxPosX) && (newX > env.minPosX)) {
         basket.positionX = newX;
     } else if (newX + basket.width >= env.maxPosX) {
@@ -156,6 +152,7 @@ $('.game-board').mousemove(function (e) {
     }
     basket.moveBasket(basket.positionX);
 });
+
 
 /*-----------------------------Testowa Instrukcja Gry--------------------------------*/
 //temp game-instruction
