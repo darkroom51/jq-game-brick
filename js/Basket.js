@@ -1,7 +1,7 @@
 function Basket() {
     this.positionX = 40;
-    this.positionY = 90;
-    this.height = 5;
+    this.positionY = 85;
+    this.height = 10;
     this.width = 20;
 }
 

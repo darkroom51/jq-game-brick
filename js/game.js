@@ -27,13 +27,15 @@ var env = {
         });
     },
     initGame: function () {
-        //env.resetGame();
-        /*-- Init score_bar --*/
+        /*-- Init scoreBar --*/
         env.scoreBar = new ScoreBar();
         env.scoreBar.init();
+        /*-- Init infoPages --*/
         env.infoPages = new InfoPages();
         env.infoPages.setPageStartGame();
-        /*-- Init bg_sound --*/
+        /*-- Init basket --*/
+        //not yet
+        /*-- Init bgSound --*/
         $('.game-board').append('<div class="sounds"><audio id="bg_sound" autoplay="autoplay" loop="loop"><source src="audio/8-bit-bg-sound.mp3" /></audio><a href="#noscroll" id="bg_sound_mute" class="bg-sound-on"></a></div>'); //-----wld_TEMP
     },
     resetGame: function () {
@@ -147,15 +149,6 @@ $('.game-board').mousemove(function (e) {
     basket.moveBasket(basket.positionX);
 });
 
-
-/*-----------------------------Testowa Instrukcja Gry--------------------------------*/
-//temp game-instruction
-// var gameInstruction =
-// '<p>Catch good ones <img src="img/h1.svg" alt="good ones"><img src="img/h2.svg" alt="good ones"><img src="img/h3.svg" alt="good ones"></p>'+
-// '<p>Avoid bad ones &nbsp;&nbsp;&nbsp;<img src="img/h6.svg" alt="bad ones"><img src="img/h7.svg" alt="bad ones"><img src="img/h8.svg" alt="bad ones"></p>'+
-// '<p>Take care of your Health:<br>+200 * lvl No. -> Level up!<br>&nbsp;-100 -> You\'re dead!</p>'+
-// '<p>Bonus lvl -> No chanve to survive, but xtra scores ;)</p>'+
-// '';
 
 /*-----------------------------Testowe Zatrzymywanie Gry--------------------------------*/
 // setTimeout(function () {
