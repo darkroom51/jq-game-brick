@@ -37,6 +37,7 @@ var env = {
         //not yet
         /*-- Init bgSound --*/
         $('.game-board').append('<div class="sounds"><audio id="bg_sound" autoplay="autoplay" loop="loop"><source src="audio/8-bit-bg-sound.mp3" /></audio><a href="#noscroll" id="bg_sound_mute" class="bg-sound-on"></a></div>'); //-----wld_TEMP
+        $('.game-board').append('<div class="floor"></div>'); //-----wld_TEMP
     },
     resetGame: function () {
         env.level = 0;

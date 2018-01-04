@@ -5,7 +5,8 @@ function InfoPages() {
         '<p>Catch good ones <img src="img/h1.svg" alt="good ones"><img src="img/h2.svg" alt="good ones"><img src="img/h3.svg" alt="good ones"></p>'+
         '<p>Avoid bad ones &nbsp;&nbsp;&nbsp;<img src="img/h6.svg" alt="bad ones"><img src="img/h7.svg" alt="bad ones"><img src="img/h8.svg" alt="bad ones"></p>'+
         '<p>Take care of your Health:<br>+200 * lvl No. -> Level up!<br>&nbsp;-100 -> You\'re dead!</p>'+
-        '<p>Bonus lvl -> No chance to survive, but xtra scores ;)</p>'+
+        '<p>Survive 3 levels to win the game and be a hero on our hall of fame</p>'+
+        '<p>Oh, there\'s also bonus level to catch some extra points ;)</p>'+
         '</div><button onclick="$(\'.page-level-ok\').remove(); env.infoPages.setPageStartGame();">Back to Menu</button></div>');
     this.pageLevelEnd = $('<div class="page-level-ok"><span>LEVEL UP!</span><button onclick="env.initLevel(env.level); $(\'.page-level-ok\').remove();">Next level</button></div>');
     this.pageGameEnd = $('<div class="page-level-ok"><span>YOU WON!</span><button onclick="$(\'.page-level-ok\').remove(); env.infoPages.setPageHiScoresSubmit();">Submit Scores</button><button onclick="$(\'.page-level-ok\').remove(); env.resetGame();">Reset Game</button><button onclick="env.initLevel(env.level); $(\'.page-level-ok\').remove();">Bonus level</button></div>');
@@ -34,12 +35,12 @@ InfoPages.prototype.setPageGameOver = function (level) {
 
 
 InfoPages.prototype.setPageHiScoresList = function () {
-    var pageHiScoresList = $('<div class="page-level-ok"><div class="game-instruction"><p>Hi-Scores:</p><p id="hi_scores_list"></p></div><button onclick="$(\'.page-level-ok\').remove(); env.infoPages.setPageStartGame();">Back to Menu</button></div>');
+    var pageHiScoresList = $('<div class="page-level-ok"><div class="game-hiscores"><p>Hi-Scores:</p><p id="hi_scores_list"></p></div><button onclick="$(\'.page-level-ok\').remove(); env.infoPages.setPageStartGame();">Back to Menu</button></div>');
     $('.game-board').append(pageHiScoresList);
     env.infoPages.lsFetchScores();
 }
 InfoPages.prototype.setPageHiScoresSubmit = function () {
-    var pageHiScoresSubmit = $('<div class="page-level-ok"><div class="game-instruction">' +
+    var pageHiScoresSubmit = $('<div class="page-level-ok"><div class="game-hiscores">' +
         '<p><input id="your_name" type="text" name="yourName" placeholder="Enter your name" maxlength="10"></p>'+
         '<p><input id="your_score" type="hidden" name="yourScore" value="'+ env.score +'"></p>'+
         '<p>Your Score: '+ env.score +'</p>'+
@@ -71,7 +72,7 @@ InfoPages.prototype.lsFetchScores = function () {
         var hiScores = JSON.parse(localStorage.getItem('hiScores'));
         hiScoresList.innerHTML = '<ul>';
         for (var i = hiScores.length-1; i >= 0 ; i--) {
-                hiScoresList.innerHTML += '<li><div class="text">'+ hiScores[i].name +'|'+ hiScores[i].score +'</div></li>';
+                hiScoresList.innerHTML += '<li><div class="text">'+ hiScores[i].name +' -> '+ hiScores[i].score +'</div></li>';
         }
         hiScoresList.innerHTML += '</ul>';
     }
