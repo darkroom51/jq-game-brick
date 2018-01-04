@@ -59,6 +59,7 @@ body {
     background: silver;
     width: 100%;
     margin-top: -1px;
+    display:none;
 }
 
 .game-board {
@@ -68,7 +69,8 @@ body {
     height: 100%;
     width: 100%;
     z-index: 25;
-    background: url('../img/hbg.png') top center no-repeat;
+    background: url('../img/hbg.svg') center center no-repeat;
+    background-size: contain;
 }
 
 .floor{
