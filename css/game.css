@@ -26,40 +26,6 @@ body {
     height: 95%;
     width: 95vh;
     transform: translate(-50%, -50%);
-    /*box-shadow: 0px 0px 15px 0px rgba(0,0,0,.6);*/
-}
-
-
-.axis {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    z-index: 15;
-    opacity: 0.5;
-}
-
-.axis-y {
-    position: absolute;
-    top: 0%;
-    left: 50%;
-    width: 2px;
-    background: silver;
-    height: 100%;
-    margin-left: -1px;
-    display: none;
-}
-
-.axis-x {
-    position: absolute;
-    top: 90%;
-    left: 0;
-    height: 2px;
-    background: silver;
-    width: 100%;
-    margin-top: -1px;
-    display:none;
 }
 
 .game-board {
@@ -110,36 +76,6 @@ body {
     color: #fff;
     transition: all 50ms ease-in-out;
 }
-
-
-/* .brick.brick-type-1{
-    background:#007F05;
-}
-.brick.brick-type-2{
-    background:#4CFF53;
-}
-.brick.brick-type-3{
-    background:#00FF0A;
-}
-.brick.brick-type-4{
-    background:#267F2A;
-}
-.brick.brick-type-5{
-    background:#0184bb;
-}
-.brick.brick-type-6{
-    background:#FF4C87;
-}
-.brick.brick-type-7{
-    background:#FF0053;
-}
-.brick.brick-type-8{
-    background:#7F2643;
-}
-.brick.brick-type-9{
-    background:#7F002A;
-} */
-
 .brick.brick-type-1{
     background: url('../img/h1.svg') top left no-repeat;
 }
@@ -167,7 +103,6 @@ body {
 .brick.brick-type-9{
     background:url('../img/h9.svg') top left no-repeat;
 }
-
 .brick .brick-health-good{ 
     background: green;
     color:#fff;
@@ -197,14 +132,12 @@ body {
     padding: 4px 4px 0 0;
 }
 
-
 .sounds{
     position: absolute;
     top:0;
     left:0;
     z-index: 200;
 }
-
 a#bg_sound_mute{
     position: absolute;
     top:3px;
@@ -238,7 +171,6 @@ a#bg_sound_mute.bg-sound-off {
     left:50%;
     transform: translate(-50%, -50%);
 }
-
 .game-instruction{
     display: inline-block;
     position: absolute;
@@ -253,14 +185,12 @@ a#bg_sound_mute.bg-sound-off {
     font-size:1.5rem;
     padding:0 0 30px 0;
 }
-
 .game-instruction img{
     max-width: 30px;
     height: auto;
     display: inline-block;
     margin-left:10px;
 }
-
 .game-hiscores{
     display: inline-block;
     position: absolute;
@@ -275,8 +205,6 @@ a#bg_sound_mute.bg-sound-off {
     font-size:1.5rem;
     padding:0 0 30px 0;
 }
-
-
 button {
     font-size: .8rem;
     padding: .85rem 2.13rem;
@@ -310,43 +238,65 @@ button:hover{
 
 
 
-/* =================================TRASH============================================ */
+/* =================================TEST ELEMENTS======================================= */
 
-/*body {
-    background: #ddd;
-    font-size: 0.9em;
-    color: #fff;
-}
 
-.viewport {
+/*.axis {
     position: absolute;
     top: 0;
-    left: 50%;
+    left: 0;
     height: 100%;
-    width: 60%;
-    overflow: hidden;
-    transform: translate(-50%, 0);
-    background: #fff;
-}*/
+    width: 100%;
+    z-index: 15;
+    opacity: 0.5;
+}
 
-
-/*.bullet {
+.axis-y {
     position: absolute;
     top: 0%;
-    left: 0%;
-    height: 4%;
-    width: 4%;
-    z-index: 35;
-    background: gray;
-    color: #fff;
-    transition: all 5000ms linear;
+    left: 50%;
+    width: 2px;
+    background: silver;
+    height: 100%;
+    margin-left: -1px;
+    display: none;
 }
 
-.bullet.falling{
-    top: 100%;
-}
-
-.bullet.falling-fast{
-    top: 100%;
-    transition: all 1000ms linear;
+.axis-x {
+    position: absolute;
+    top: 90%;
+    left: 0;
+    height: 2px;
+    background: silver;
+    width: 100%;
+    margin-top: -1px;
+    display:none;
 }*/
+
+/* .brick.brick-type-1{
+    background:#007F05;
+}
+.brick.brick-type-2{
+    background:#4CFF53;
+}
+.brick.brick-type-3{
+    background:#00FF0A;
+}
+.brick.brick-type-4{
+    background:#267F2A;
+}
+.brick.brick-type-5{
+    background:#0184bb;
+}
+.brick.brick-type-6{
+    background:#FF4C87;
+}
+.brick.brick-type-7{
+    background:#FF0053;
+}
+.brick.brick-type-8{
+    background:#7F2643;
+}
+.brick.brick-type-9{
+    background:#7F002A;
+} */

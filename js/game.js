@@ -15,7 +15,7 @@ var env = {
     creationDelay: 0,
     levelEndHealth: 0,
     levelDeadHealth: 0,
-    calcProc: function (x) {
+    calcPct: function (x) {
         return Math.floor(x * 100 / env.viewPortWpx)
     },
     getRandom: function (min, max) {
@@ -34,7 +34,7 @@ var env = {
         env.infoPages = new InfoPages();
         env.infoPages.setPageStartGame();
         /*-- Init basket --*/
-        //not yet
+        //in the global scope due to some reasons
         /*-- Init bgSound --*/
         $('.game-board').append('<div class="sounds"><audio id="bg_sound" autoplay="autoplay" loop="loop"><source src="audio/8-bit-bg-sound.mp3" /></audio><a href="#noscroll" id="bg_sound_mute" class="bg-sound-on"></a></div>'); //-----wld_TEMP
         $('.game-board').append('<div class="floor"></div>'); //-----wld_TEMP
@@ -105,7 +105,7 @@ var env = {
                     element.removeBrick();
                     //delete element;
                 } else {
-                    //do nothing
+                    //do nothing for now
                 }
             });
             //if levelEndHealth reached, stop intervals and LEVEL UP!
@@ -139,7 +139,7 @@ var basket = new Basket();
 basket.init();
 //Set .mousemove() listener for basket
 $('.game-board').mousemove(function (e) {
-    var newX = Math.floor(env.calcProc(e.pageX) - basket.width / 2 - env.calcProc($('.game-board').offset().left));
+    var newX = Math.floor(env.calcPct(e.pageX) - basket.width / 2 - env.calcPct($('.game-board').offset().left));
     if ((newX + basket.width < env.maxPosX) && (newX > env.minPosX)) {
         basket.positionX = newX;
     } else if (newX + basket.width >= env.maxPosX) {
@@ -151,15 +151,8 @@ $('.game-board').mousemove(function (e) {
 });
 
 
-/*-----------------------------Testowe Zatrzymywanie Gry--------------------------------*/
+/*-----------------------------Test Game Stop--------------------------------*/
 // setTimeout(function () {
 //     clearInterval(intervalCheck);
 //     clearInterval(intervalBrick);
 // }, 10000)
-
-/*
-tudu  ----->
-2. delete brick Objects
-3. cos nie tak z basket, jesli nie uruchomimy gry z mysza nad game-board
-4. bardziej inteligenetne trzorzenie bricks - maybe
-*/

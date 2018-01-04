@@ -1,7 +1,5 @@
 function ScoreBar() {
-    // this.level = 0;
-    // this.health = 0;
-    // this.score = 0;
+    // nothing for now
 }
 
 ScoreBar.prototype.init = function () {

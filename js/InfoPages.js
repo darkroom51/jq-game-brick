@@ -1,17 +1,27 @@
 // Pages
 function InfoPages() {
-    this.pageStartGame = $('<div class="page-level-ok"><span>Get Ready!</span><button onclick="env.initLevel(env.level); $(\'.page-level-ok\').remove();">Start Game</button><button onclick="$(\'.page-level-ok\').remove(); env.infoPages.setPageInstruction();">Instruction</button><button onclick="$(\'.page-level-ok\').remove(); env.infoPages.setPageHiScoresList();">Hi-Scores</button></div>');
-    this.pageInstruction = $('<div class="page-level-ok"><div class="game-instruction">' +
+    this.pageStartGame = $('<div class="page-level-ok"><span>Get Ready!</span>'+
+        '<button onclick="env.initLevel(env.level); $(\'.page-level-ok\').remove();">Start Game</button>'+
+        '<button onclick="$(\'.page-level-ok\').remove(); env.infoPages.setPageInstruction();">Instruction</button>'+
+        '<button onclick="$(\'.page-level-ok\').remove(); env.infoPages.setPageHiScoresList();">Hi-Scores</button></div>');
+    this.pageInstruction = $('<div class="page-level-ok"><div class="game-instruction">'+
         '<p>Catch good ones <img src="img/h1.svg" alt="good ones"><img src="img/h2.svg" alt="good ones"><img src="img/h3.svg" alt="good ones"></p>'+
         '<p>Avoid bad ones &nbsp;&nbsp;&nbsp;<img src="img/h6.svg" alt="bad ones"><img src="img/h7.svg" alt="bad ones"><img src="img/h8.svg" alt="bad ones"></p>'+
         '<p>Take care of your Health:<br>+200 * lvl No. -> Level up!<br>&nbsp;-100 -> You\'re dead!</p>'+
-        '<p>Survive 3 levels to win the game and be a hero on our hall of fame</p>'+
+        '<p>Survive 3 levels to win the game and be a hero on our wall of fame</p>'+
         '<p>Oh, there\'s also bonus level to catch some extra points ;)</p>'+
         '</div><button onclick="$(\'.page-level-ok\').remove(); env.infoPages.setPageStartGame();">Back to Menu</button></div>');
-    this.pageLevelEnd = $('<div class="page-level-ok"><span>LEVEL UP!</span><button onclick="env.initLevel(env.level); $(\'.page-level-ok\').remove();">Next level</button></div>');
-    this.pageGameEnd = $('<div class="page-level-ok"><span>YOU WON!</span><button onclick="$(\'.page-level-ok\').remove(); env.infoPages.setPageHiScoresSubmit();">Submit Scores</button><button onclick="$(\'.page-level-ok\').remove(); env.resetGame();">Reset Game</button><button onclick="env.initLevel(env.level); $(\'.page-level-ok\').remove();">Bonus level</button></div>');
-    this.pageGameOver = $('<div class="page-level-ok"><span>GAME OVER</span><button onclick="$(\'.page-level-ok\').remove(); env.resetGame();">Reset Game</button></div>');
-    this.pageGameOverBonus = $('<div class="page-level-ok"><span>GAME OVER</span><button onclick="$(\'.page-level-ok\').remove(); env.infoPages.setPageHiScoresSubmit();">Submit Scores</button><button onclick="$(\'.page-level-ok\').remove(); env.resetGame();">Reset Game</button></div>');
+    this.pageLevelEnd = $('<div class="page-level-ok"><span>LEVEL UP!</span>'+
+        '<button onclick="env.initLevel(env.level); $(\'.page-level-ok\').remove();">Next level</button></div>');
+    this.pageGameEnd = $('<div class="page-level-ok"><span>YOU DID IT!</span>'+
+        '<button onclick="$(\'.page-level-ok\').remove(); env.infoPages.setPageHiScoresSubmit();">Submit Scores</button>'+
+        '<button onclick="$(\'.page-level-ok\').remove(); env.resetGame();">Reset Game</button>'+
+        '<button onclick="env.initLevel(env.level); $(\'.page-level-ok\').remove();">Bonus level</button></div>');
+    this.pageGameOver = $('<div class="page-level-ok"><span>GAME OVER</span>'+
+        '<button onclick="$(\'.page-level-ok\').remove(); env.resetGame();">Reset Game</button></div>');
+    this.pageGameOverBonus = $('<div class="page-level-ok"><span></span>'+
+        '<button onclick="$(\'.page-level-ok\').remove(); env.infoPages.setPageHiScoresSubmit();">Submit Scores</button>'+
+        '<button onclick="$(\'.page-level-ok\').remove(); env.resetGame();">Reset Game</button></div>');
 }
 
 InfoPages.prototype.setPageStartGame = function () {
@@ -35,7 +45,9 @@ InfoPages.prototype.setPageGameOver = function (level) {
 
 
 InfoPages.prototype.setPageHiScoresList = function () {
-    var pageHiScoresList = $('<div class="page-level-ok"><div class="game-hiscores"><p>Hi-Scores:</p><p id="hi_scores_list"></p></div><button onclick="$(\'.page-level-ok\').remove(); env.infoPages.setPageStartGame();">Back to Menu</button></div>');
+    var pageHiScoresList = $('<div class="page-level-ok"><div class="game-hiscores">'+
+        '<p>Hi-Scores:</p><p id="hi_scores_list"></p>'+
+        '</div><button onclick="$(\'.page-level-ok\').remove(); env.infoPages.setPageStartGame();">Back to Menu</button></div>');
     $('.game-board').append(pageHiScoresList);
     env.infoPages.lsFetchScores();
 }
@@ -44,8 +56,8 @@ InfoPages.prototype.setPageHiScoresSubmit = function () {
         '<p><input id="your_name" type="text" name="yourName" placeholder="Enter your name" maxlength="10"></p>'+
         '<p><input id="your_score" type="hidden" name="yourScore" value="'+ env.score +'"></p>'+
         '<p>Your Score: '+ env.score +'</p>'+
-        '</div><button onclick="env.infoPages.lsSubmitScores(); $(\'.page-level-ok\').remove(); env.resetGame();">Submit my Scores</button><button onclick="$(\'.page-level-ok\').remove(); env.resetGame();">Reset game</button></div>');
-
+        '</div><button onclick="env.infoPages.lsSubmitScores(); $(\'.page-level-ok\').remove(); env.resetGame();">Submit my Scores</button>'+
+        '<button onclick="$(\'.page-level-ok\').remove(); env.resetGame();">Reset game</button></div>');
     $('.game-board').append(pageHiScoresSubmit);
 }
 InfoPages.prototype.lsSubmitScores = function () {
