@@ -78,30 +78,39 @@ body {
 }
 .brick.brick-type-1{
     background: url('../img/mh1.svg') top left no-repeat;
+    background-size: contain;
 }
 .brick.brick-type-2{
     background:url('../img/mh2.svg') top left no-repeat;
+    background-size: contain;
 }
 .brick.brick-type-3{
     background:url('../img/mh3.svg') top left no-repeat;
+    background-size: contain;
 }
 .brick.brick-type-4{
     background:url('../img/mh4.svg') top left no-repeat;
+    background-size: contain;
 }
 .brick.brick-type-5{
     background:url('../img/mh5.svg') top left no-repeat;
+    background-size: contain;
 }
 .brick.brick-type-6{
     background:url('../img/mh6.svg') top left no-repeat;
+    background-size: contain;
 }
 .brick.brick-type-7{
     background:url('../img/mh7.svg') top left no-repeat;
+    background-size: contain;
 }
 .brick.brick-type-8{
     background:url('../img/mh8.svg') top left no-repeat;
+    background-size: contain;
 }
 .brick.brick-type-9{
     background:url('../img/mh9.svg') top left no-repeat;
+    background-size: contain;
 }
 .brick .brick-health-good{ 
     background: green;
