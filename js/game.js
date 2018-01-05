@@ -150,6 +150,21 @@ $('.game-board').mousemove(function (e) {
     basket.moveBasket(basket.positionX);
 });
 
+//Set .touchmove() listener for basket
+$('.basket').bind('touchmove', function (e) {
+    e.preventDefault();
+    var touch = e.originalEvent.touches[0] || e.originalEvent.changedTouches[0];
+    var newX = Math.floor(env.calcPct(touch.pageX) - basket.width / 2 - env.calcPct($('.game-board').offset().left));
+    if ((newX + basket.width < env.maxPosX) && (newX > env.minPosX)) {
+        basket.positionX = newX;
+    } else if (newX + basket.width >= env.maxPosX) {
+        basket.positionX = env.maxPosX - basket.width;
+    } else {
+        basket.positionX = env.minPosX;
+    }
+    basket.moveBasket(basket.positionX);
+});
+
 
 /*-----------------------------Test Game Stop--------------------------------*/
 // setTimeout(function () {
