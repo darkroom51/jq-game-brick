@@ -46,6 +46,7 @@ InfoPages.prototype.setPageGameOver = function (level) {
 
 InfoPages.prototype.setPageHiScoresList = function () {
     var pageHiScoresList = $('<div class="page-level-ok"><div class="game-hiscores">' +
+        '<p><img src="img/mh4.svg" alt="good"><img src="img/mh9.svg" alt="bad"><img src="img/mh5.svg" alt="good"></p>' +
         '<p>Hi-Scores:</p><p id="hi_scores_list"></p>' +
         '</div><button onclick="$(\'.page-level-ok\').remove(); env.infoPages.setPageStartGame();">Back to Menu</button></div>');
     $('.game-board').append(pageHiScoresList);
