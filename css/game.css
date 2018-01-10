@@ -139,7 +139,7 @@ body {
     font-size: 12px;
     height:22px;
     width:100%;
-    background: silver;
+    background: #b2b2b2;
     color:#fff;
     text-align:right;
     padding: 4px 4px 0 0;
@@ -286,6 +286,14 @@ input[type="text"]
         height: auto;
         display: inline-block;
         margin-left:5px;
+    }
+}
+
+@media (max-height: 768px) {
+    .game-hiscores p,
+    .game-instruction p{
+        font-size:0.17em;
+        padding:0 0 10px 0;
     }
 }
 
